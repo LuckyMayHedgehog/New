@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+class Masti {
+private:
+  string name;
+public:
+  Masti(const string& n) : name(n) {}
+  string getName() const { return name; }
+
+  bool operator == (Masti& other) const {
+    return name == other.name;
+  }
+};
+
+class CardValue {
+private:
+  string name;
+  int power;
+
+public:
+  CardValue(const string& n, int p) : name(n), power(p) {}
+
+  string getName() const { return name; }
+  int getPower() const { return power; }
+
+  bool operator == (CardValue& other) const {
+    return power == other.power;
+  }
+};
+
+class Card {
+private:
+  Masti mast;
+  CardValue value;
+  static Masti mastis[10];
+  static CardValue values[20];
+public:
+  Card(const Masti& m, const CardValue& v) : mast(m), value(v) {}
+
+  string getMastName() { return mast.getName(); }
+  string getValueName() { return value.getName(); }
+  int getPower() { return value.getPower(); }
+
+
+
+    /*Есть static массив с определенными мастями(в массиве не должно 
+      \быть 2 и больше мастей, с одинаковыми значениями) и static массив с определенными
+    значениями карт(в массиве не должно
+      быть 2 и больше карт, с одинаковой силой).Сила карты - это показывает то, насколько 
+    сильна карта, например у нас есть карта*/
+};
+
+
+
+
+int main()
+{
+}
